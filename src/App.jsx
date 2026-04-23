@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import { PreferencesContextProvider } from './contexts/PreferencesContext'
+import { MealContextProvider } from './contexts/MealPlanContext'
 // import './App.css'
 
 function App() {
@@ -11,10 +12,11 @@ function App() {
   return (
     <>
       <PreferencesContextProvider>
-        <h1 className="">
+        <MealContextProvider>
+          <h1 className="">
           Hello world!
         </h1>
-
+        </MealContextProvider>
       </PreferencesContextProvider>
 
     </>
