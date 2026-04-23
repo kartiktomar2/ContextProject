@@ -51,7 +51,7 @@ export const recipes=[
           id:5,
           name:"Smoothie Bowl",
           mealType:"breakfast",
-          diet:"vegan",
+          diet:"vegetarian",
           prepTime:10,
           ingredients:[
             { name:"banana",quantity:"one", unit:"piece" },
