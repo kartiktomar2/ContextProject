@@ -5,9 +5,10 @@ export const recipes=[
           mealType:"lunch",
           diet:"vegetarian",
           prepTime:25,
+          serving:2,
           ingredients:[
-            { name:"rice",quantity:"one", unit:"cup" },
-            { name:"broccoli",quantity:"one", unit:"cup" },
+            { name:"rice",quantity:1, unit:"cup" },
+            { name:"broccoli",quantity:1, unit:"cup" },
 
         ]
       },
@@ -17,10 +18,11 @@ export const recipes=[
           mealType:"lunch",
           diet:"non-vegetarian",
           prepTime:15,
+          serving:2,
           ingredients:[
-            { name:"chicken",quantity:"two", unit:"cups" },
-            { name:"lettuce",quantity:"one", unit:"cup" },
-            { name:"tomato",quantity:"one", unit:"piece" }
+            { name:"chicken",quantity:2, unit:"cups" },
+            { name:"lettuce",quantity:1, unit:"cup" },
+            { name:"tomato",quantity:1, unit:"piece" }
         ]
       },
       {
@@ -29,10 +31,11 @@ export const recipes=[
           mealType:"dinner",
           diet:"vegetarian",
           prepTime:30,
+          serving:2,
           ingredients:[
-            { name:"pasta",quantity:"one", unit:"cup" },
-            { name:"zucchini",quantity:"one", unit:"cup" },
-            { name:"bell pepper",quantity:"one", unit:"piece" }
+            { name:"pasta",quantity:1, unit:"cup" },
+            { name:"zucchini",quantity:1, unit:"cup" },
+            { name:"bell pepper",quantity:1, unit:"piece" }
         ]
       },
       {
@@ -41,10 +44,11 @@ export const recipes=[
           mealType:"dinner",
           diet:"non-vegetarian",
           prepTime:20,
+          serving:2,
           ingredients:[
-            { name:"beef",quantity:"one", unit:"pound" },
-            { name:"broccoli",quantity:"one", unit:"cup" },
-            { name:"soy sauce",quantity:"two", unit:"tablespoons" }
+            { name:"beef",quantity:1, unit:"pound" },
+            { name:"broccoli",quantity:1, unit:"cup" },
+            { name:"soy sauce",quantity:2, unit:"tablespoons" }
         ]
       },
       {
@@ -53,10 +57,11 @@ export const recipes=[
           mealType:"breakfast",
           diet:"vegetarian",
           prepTime:10,
+          serving:2,
           ingredients:[
-            { name:"banana",quantity:"one", unit:"piece" },
-            { name:"berries",quantity:"one", unit:"cup" },
-            { name:"almond milk",quantity:"one", unit:"cup" }
+            { name:"banana",quantity:1, unit:"piece" },
+            { name:"berries",quantity:1, unit:"cup" },
+            { name:"almond milk",quantity:1, unit:"cup" }
         ]
       }
 ]
