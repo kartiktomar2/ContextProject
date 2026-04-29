@@ -8,7 +8,7 @@ import { buildGroceryList } from "../utils/grocery";
 let GroceryListContext = createContext({
     groceryItems: [],
     checkedItems: [],
-    toggleChecked: (itemName) => { }
+    toggleChecked: (itemName,itemUnit) => { }
 })
 
 export   const GroceryListContextProvider = ({ children }) => {
@@ -20,7 +20,7 @@ export   const GroceryListContextProvider = ({ children }) => {
 
     let groceryItems = buildGroceryList(mealPlan, servings);
     
-    let toggleChecked=(itemName)=>{
+    let toggleChecked=(itemName,itemUnit)=>{
         // if unchecked then add in the list else remove it from the list 
         // const exist= checkedItems.includes(itemName);
         // if(exist)
@@ -32,12 +32,12 @@ export   const GroceryListContextProvider = ({ children }) => {
         // setCheckedItems(prev=>[...prev,itemName]);
 
         setCheckedItems(prev=>{
-               const exist= prev.includes(itemName); 
+               const exist= prev.includes(itemName+"_"+itemUnit); 
                if(exist)
                {
-                 return prev.filter(name=>name!==itemName)
+                 return prev.filter(nameAndUnit=>nameAndUnit!==itemName+"_"+itemUnit)
                }
-               return [...prev,itemName]
+               return [...prev,itemName+"_"+itemUnit]
         })
     }
 
