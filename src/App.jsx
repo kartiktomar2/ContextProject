@@ -4,6 +4,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import { PreferencesContextProvider } from './contexts/PreferencesContext'
 import { MealContextProvider } from './contexts/MealPlanContext'
+import { GroceryListContextProvider } from './contexts/GroceryListContext'
 // import './App.css'
 
 function App() {
@@ -13,9 +14,11 @@ function App() {
     <>
       <PreferencesContextProvider>
         <MealContextProvider>
-          <h1 className="">
-          Hello world!
-        </h1>
+          <GroceryListContextProvider>
+            <h1 className="">
+              Hello world!
+            </h1>
+          </GroceryListContextProvider>
         </MealContextProvider>
       </PreferencesContextProvider>
 
