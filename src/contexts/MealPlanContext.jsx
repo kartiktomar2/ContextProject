@@ -14,8 +14,11 @@ const MealPlanContext = createContext({
         saturday: [],
         sunday: []
     },
-    addMealToDay: (day, recipe) => { },
-    removeMealFromDay: (day, recipeId) => { }
+    selectedRecipe: null,
+    addMealToDay: () => { },
+    removeMealFromDay: () => { },
+    setSelectedRecipe: () => { },
+    clearSelectedRecipe: () => { },
 })
 
 
@@ -30,6 +33,11 @@ export const MealContextProvider = ({ children }) => {
         saturday: [],
         sunday: []
     })
+    const [selectedRecipe, setSelectedRecipe] = useState(null);
+
+    function clearSelectedRecipe() {
+        setSelectedRecipe(null);
+    }
 
     function addMealToDay(day, recipe) {
         // if (!Object.keys(mealPlan).includes(day)) {
@@ -38,19 +46,17 @@ export const MealContextProvider = ({ children }) => {
         // }
         // // on the passed day add the recipe 
         // setMealPlan(prev => ({ ...prev, [day]: [...prev[day], recipe] }))
-        setMealPlan(prev=>{
-                   if(!(day in prev))
-                   {
-                      throw new Error("invalid day");
-                      
-                   }
-                   let exist= prev[day].some(r=>r.id===recipe.id)
-                    if(exist)
-                    {
-                          return prev;
-                    }
+        setMealPlan(prev => {
+            if (!(day in prev)) {
+                throw new Error("invalid day");
 
-                   return { ...prev, [day]: [...prev[day], recipe] }
+            }
+            let exist = prev[day].some(r => r.id === recipe.id)
+            if (exist) {
+                return prev;
+            }
+
+            return { ...prev, [day]: [...prev[day], recipe] }
         })
     }
 
@@ -61,21 +67,21 @@ export const MealContextProvider = ({ children }) => {
         // }
         //    on the day passed filter the recipe using the recipe id 
         setMealPlan(prev => {
-             if(!(day in prev))
-                   {
-                      throw new Error("invalid day");
-                      
-                   }
-          return { ...prev, [day]: [...prev[day].filter((recipe) => recipe.id !== recipeId)] 
+            if (!(day in prev)) {
+                throw new Error("invalid day");
+
             }
-    }
-    
-    )
+            return {
+                ...prev, [day]: [...prev[day].filter((recipe) => recipe.id !== recipeId)]
+            }
+        }
+
+        )
     }
 
     return (
         <>
-            <MealPlanContext value={{ mealPlan, addMealToDay, removeMealFromDay }}>
+            <MealPlanContext value={{ mealPlan, addMealToDay, removeMealFromDay, selectedRecipe, setSelectedRecipe, clearSelectedRecipe }}>
                 {children}
             </MealPlanContext>
         </>
