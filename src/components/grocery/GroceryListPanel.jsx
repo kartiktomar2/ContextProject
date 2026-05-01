@@ -5,9 +5,12 @@ import { useGroceryListContext } from '../../contexts/GroceryListContext'
 import GroceryItem from './GroceryItem'
 
 const GroceryListPanel = () => {
-    const {groceryItems}= useGroceryListContext()
+    const {groceryItems,clearCheckedItems,checkedItems}= useGroceryListContext()
   return (
     <div>
+      <h3>Grocery List Pannel </h3>
+      <p>Grocery Count: {groceryItems.length}</p>
+     {checkedItems.length>0&&<button onClick={clearCheckedItems}>Clear Checked Item </button>}
       {
             groceryItems.length>0? <div>
                    {

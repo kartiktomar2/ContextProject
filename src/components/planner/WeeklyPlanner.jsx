@@ -5,15 +5,16 @@ import { useMealPlanContext } from '../../contexts/MealPlanContext'
 import DayPlanCard from './DayPlanCard'
 
 const WeeklyPlanner = () => {
-    const {mealPlan}= useMealPlanContext()
+  const { mealPlan } = useMealPlanContext()
   return (
-    <div> 
-        {
-              Object.keys(mealPlan).map(day=>{
-                return  <DayPlanCard key={day} day={day} meals={mealPlan[day]} />
-              })
-        }
-      
+    <div>
+      <h2>Weekly Planner </h2>
+      {
+        Object.keys(mealPlan).map(day => {
+          return <DayPlanCard key={day} day={day} meals={mealPlan[day]} />
+        })
+      }
+
     </div>
   )
 }

@@ -7,13 +7,14 @@ const DayPlanCard = ({ day, meals }) => {
     return (
         <div>
             <h1>Meals for: {day}</h1>
+            <p>Total Meals: {meals.length}</p>
             {
                 meals.length > 0 ? <div>
                     {
                         meals.map(meal => {
                             return <PlannedMealItem key={meal.id}
-                             day={day}
-                             meal={meal}
+                                day={day}
+                                meal={meal}
                             />
                         })
                     }

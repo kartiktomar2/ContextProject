@@ -8,7 +8,8 @@ import { buildGroceryList } from "../utils/grocery";
 let GroceryListContext = createContext({
     groceryItems: [],
     checkedItems: [],
-    toggleChecked: (itemName,itemUnit) => { }
+    toggleChecked: (itemName,itemUnit) => { },
+    clearCheckedItems:()=>{}
 })
 
 export   const GroceryListContextProvider = ({ children }) => {
@@ -40,9 +41,11 @@ export   const GroceryListContextProvider = ({ children }) => {
                return [...prev,itemName+"_"+itemUnit]
         })
     }
-
+     function clearCheckedItems() {
+      setCheckedItems([]);
+  }
     return (
-        <GroceryListContext value={{groceryItems, checkedItems,toggleChecked}}>
+        <GroceryListContext value={{groceryItems, checkedItems,toggleChecked, clearCheckedItems}}>
 
             {children}
         </GroceryListContext>

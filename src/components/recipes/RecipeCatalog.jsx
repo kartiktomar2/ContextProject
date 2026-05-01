@@ -25,7 +25,7 @@ const RecipeCatalog = () => {
                 return  <RecipeCard key={recipe.id} recipe={recipe}/>
                        
             }):
-            <div>No recipes to displayy </div>
+            <div>No recipes Matches Your Current filters  </div>
       }
     </div>
   )
