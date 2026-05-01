@@ -4,12 +4,17 @@ import RecipeFilters from '../recipes/RecipeFilters'
 import RecipeCatalog from '../recipes/RecipeCatalog'
 import WeeklyPlanner from '../planner/WeeklyPlanner'
 import GroceryListPanel from '../grocery/GroceryListPanel' 
+import RecipeDetailsModal from '../recipes/RecipeDetailsModal'
+import PreferencesPanel from '../preferences/PreferencesPanel'
 
 const AppLayout = () => {
+   const [isPreferencesOpen, setIsPreferencesOpen] = useState(false);
   return (
    <div>
-      <Header />
-
+      <Header onOpenPreferences={()=>setIsPreferencesOpen(true)}/>
+      {
+         isPreferencesOpen && <PreferencesPanel onClose={()=>setIsPreferencesOpen(false)}/>
+      }
       <main>
         <section>
           <RecipeFilters />
@@ -23,6 +28,7 @@ const AppLayout = () => {
         <section>
           <GroceryListPanel />
         </section>
+        <RecipeDetailsModal/>
       </main>
     </div>
   )
